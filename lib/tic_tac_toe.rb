@@ -39,7 +39,7 @@ class TicTacToe
   # #valid_move? checks to see if current player's move choice is both available and a position on the board (has an index between 0-8)
   # Called by #turn
   def valid_move?(index)
-    index.between?(0,8) && !position_taken?(index)
+    index.to_i.between?(0,8) && !position_taken?(index.to_i-1)
   end
 
   # #position_taken? checks to see if a position on the board is already occupied by an "X" or "O".
