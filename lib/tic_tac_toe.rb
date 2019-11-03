@@ -46,10 +46,24 @@ class TicTacToe
     display_board
   end
 
+=begin
   def valid_move?(board,index)
     input.to_i.between?(0,8) && !position_taken?(input)
   end
+=end
 
+
+def validmove?(board, index) 
+  #if move is valid 
+  if positiontaken?(board,index) == false && index.between?(0,8) == true 
+    return true
+    #if move is invalid 
+    elsif position_taken?(board, index) == true return false elsif index.between?(0, 8) == false 
+    return false 
+    end 
+    end
+    
+    
   def current_player
     turn_count % 2 == 0 ? "X" : "O"
   end
