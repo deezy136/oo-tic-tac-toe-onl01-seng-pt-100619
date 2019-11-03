@@ -86,7 +86,11 @@ class TicTacToe
       @winner = position(winning_combo.first)
     end
   end
-
+  
+def input_to_index(input)
+    input.to_i - 1
+  end
+  
   def position(location)
     @board[location.to_i]
   end
