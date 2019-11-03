@@ -33,18 +33,25 @@ class TicTacToe
     puts "-----------"
     puts " #{board[6]} | #{board[7]} | #{board[8]} "
   end
-
-  def turn
-    display_board
-    puts "Please enter 1-9:"
-    input = gets.strip
-    index = input_to_index(input)
-    if !valid_move?(input)
-      turn
-    end
-    move(input, current_player)
-    display_board
-  end
+  
+def turn
+	puts "Please enter 1-9:"
+	user_input = gets.chomp
+	index = input_to_index(user_input)
+	if valid_move?(index) == true && current_player == "X"
+			move(index, value = "X")
+			puts display_board
+	elsif valid_move?(index) == true && current_player == "O"
+			move(index, value = "O")
+			puts display_board
+	elsif valid_move?(index) == false
+		puts "Please enter 1-9:"
+		input = gets.chomp
+	else 
+		puts "Please enter 1-9:"
+		input = gets.chomp
+	end
+end
 
 =begin
   def valid_move?(board,index)
