@@ -65,8 +65,8 @@ class TicTacToe
     @board.count{|token| token == "X" || token == "O"}
   end
 
-  def move(location, token)
-    @board[location.to_i-1] = token
+  def move(location, token = "X")
+    @board[location.to_i] = token
   end
 
   def won?
