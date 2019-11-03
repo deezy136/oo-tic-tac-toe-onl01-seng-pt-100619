@@ -35,7 +35,8 @@ class TicTacToe
   # #input_to_index converts the player's choice of position to the corresponding index in the board array.
   # Called by #turn
   def input_to_index(input)
-    input.to_i - 1
+   current_input =  input.to_i - 1
+   current_input
   end
 
   # #valid_move? checks to see if current player's move choice is both available and a position on the board (has an index between 0-8)
